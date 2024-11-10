@@ -1,0 +1,14 @@
+<%= link_to listing do %>
+  <div id="<%= dom_id listing %>" class="w-full hover:scale-105 transition-all duration-250">
+    <%= image_tag(listing.images.first, class: "w-full h-64 object-cover rounded-lg") if listing.images.any? %>
+    <p class="text-lg">
+      <%= listing.name %>
+      <span class="text-green-500">
+        <%= number_to_currency(listing.price) %>
+      </span>
+      <span class="text-purple-700">
+        <%= listing.user.zipcode %>
+      </span>
+    </p>
+  </div>
+<% end %>
